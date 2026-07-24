@@ -1,0 +1,7 @@
+* shazam.el
+
+WIP.
+
+Yes, it's gonna do what you think.
+
+
