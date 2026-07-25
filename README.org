@@ -5,7 +5,7 @@
 
 [[file:docs/images/shazam-screenshot.png]]
 
-*shazam.el* is an Emacs interface to the Shazam Music Recognition feature first included in macOS Sonoma 14.2.
+*shazam.el* is an Emacs interface to the Shazam music recognition feature included in macOS 14.2+ (Sonoma or more recent).
 
 * Features
 :PROPERTIES:

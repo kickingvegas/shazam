@@ -14,7 +14,7 @@ Copyright © 2026 Charles Y@. Choi
 
 @dircategory Emacs misc features
 @direntry
-* shazam: (shazam).     A “Now Playing” interface for the macOS Music app.
+* shazam: (shazam).     shazam.el is an Emacs interface to the Shazam music recognition feature for macOS.
 @end direntry
 
 @finalout
@@ -39,6 +39,7 @@ Copyright © 2026 @w{Charles Y. Choi}
 
 @image{images/shazam-screenshot,,,,png}
 
+@strong{shazam.el} is an Emacs interface to the Shazam Music Recognition feature included in macOS 14.2+ (Sonoma or more recent).
 
 If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help support its development and maintenance.
 
@@ -109,6 +110,7 @@ Add the following line to your Emacs initialization file:
 If no binding is desired@comma{} @code{shazam-init} can be called with no arguments.
 
 By default@comma{} every identified track is logged in an Org file named @code{shazam.org} that is stored in your home directory. This log file can be changed to preference by the customizable variable @code{shazam-log-file}.
+@vindex shazam-log-file
 
 @node Usage
 @chapter Usage
@@ -120,6 +122,7 @@ Identifying the current music playing is done with the command @code{shazam}.
 @example
 M-x shazam
 @end example
+
 
 The command @code{shazam-find-log} will open the log file (specified by the variable @code{shazam-log-file}) of recognized music tracks.
 

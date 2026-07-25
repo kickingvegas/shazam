@@ -24,7 +24,7 @@
 ;;; Commentary:
 
 ;; shazam.el is an Emacs interface to the Shazam music recognition feature in
-;; macOS 14.2+.
+;; macOS 14.2+ (Sonoma or more recent).
 
 ;; INSTALL
 ;; This package requires the installation of a macOS Shortcut named "Identify

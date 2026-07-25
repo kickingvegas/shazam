@@ -15,7 +15,7 @@
 #+TEXINFO_TITLEPAGE: t
 #+TEXINFO_DIR_CATEGORY: Emacs misc features
 #+TEXINFO_DIR_NAME: shazam
-#+TEXINFO_DIR_DESC: A “Now Playing” interface for the macOS Music app.
+#+TEXINFO_DIR_DESC: shazam.el is an Emacs interface to the Shazam music recognition feature for macOS.
 #+TEXINFO_PRINTED_TITLE: shazam.el User Guide
 
 Version: {{{version}}}
@@ -24,6 +24,7 @@ Version: {{{version}}}
 
 [[file:images/shazam-screenshot.png]]
 
+*shazam.el* is an Emacs interface to the Shazam Music Recognition feature included in macOS 14.2+ (Sonoma or more recent).
 
 #+INCLUDE: "./sponsorship.org"
 
@@ -46,7 +47,7 @@ Copyright © 2026 Charles Y. Choi
 
 
 * Requirements
-:PROPERTIES:g
+:PROPERTIES:
 :CUSTOM_ID: requirements
 :END:
 #+CINDEX: Requirements
@@ -80,6 +81,7 @@ Add the following line to your Emacs initialization file:
 If no binding is desired, ~shazam-init~ can be called with no arguments.
 
 By default, every identified track is logged in an Org file named ~shazam.org~ that is stored in your home directory. This log file can be changed to preference by the customizable variable ~shazam-log-file~.
+#+VINDEX: shazam-log-file
 
 * Usage
 #+CINDEX: Usage
@@ -90,7 +92,6 @@ Identifying the current music playing is done with the command ~shazam~.
   M-x shazam
 #+end_src
 
-#+RESULTS:
 
 The command ~shazam-find-log~ will open the log file (specified by the variable ~shazam-log-file~) of recognized music tracks.
 
