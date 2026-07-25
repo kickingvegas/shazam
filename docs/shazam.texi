@@ -1,0 +1,178 @@
+\input texinfo    @c -*- texinfo -*-
+@c %**start of header
+@setfilename shazam.info
+@settitle shazam.el User Guide
+@documentencoding UTF-8
+@documentlanguage en
+@syncodeindex pg cp
+@paragraphindent none
+@c %**end of header
+
+@copying
+Copyright © 2026 Charles Y@. Choi
+@end copying
+
+@dircategory Emacs misc features
+@direntry
+* shazam: (shazam).     A “Now Playing” interface for the macOS Music app.
+@end direntry
+
+@finalout
+@titlepage
+@title shazam.el User Guide
+@subtitle for version 0.1.0-rc.1
+@author Charles Y@. Choi (@email{kickingvegas@@gmail.com})
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top shazam.el User Guide
+
+Version: 0.1.0-rc.1
+
+Copyright © 2026 @w{Charles Y. Choi}
+
+@image{images/shazam-screenshot,,,,png}
+
+
+If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help support its development and maintenance.
+
+@image{images/default-yellow,,,,png}
+
+@uref{https://www.buymeacoffee.com/kickingvegas}
+
+@end ifnottex
+
+@menu
+* Features::
+* Requirements::
+* Install::
+* Usage::
+* Feedback & Discussion::
+* Sponsorship::
+* About::
+* Acknowledgments::
+* Main Index::
+* Variable Index::
+@end menu
+
+@node Features
+@chapter Features
+
+@cindex Features
+
+@itemize
+@item
+Identify music with the command @code{shazam}.
+
+@item
+Recognized music is added to an Org file with links to Shazam and Apple Music.
+@end itemize
+
+@node Requirements
+@chapter Requirements
+
+@cindex Requirements
+
+@strong{shazam.el} requires GNU Emacs 30.1+ running on macOS 14.2 (Sonoma) or greater.
+
+@node Install
+@chapter Install
+
+@cindex Install
+
+
+@strong{shazam.el} is available to install from MELPA (TBD).
+
+For manual installation@comma{} ensure that  @code{shazam.el} is available in the Emacs  @code{load-path} variable.
+
+This package requires the installation of a macOS Shortcut named ``Identify Music JSON''. Download and install it on your system by clicking on the link below:
+
+@itemize
+@item
+@uref{https://www.icloud.com/shortcuts/bba3dd21146c4ba78dff1d7d0c0b1092, iCloud Shortcut ``Identify Music JSON''}
+@end itemize
+
+@strong{shazam.el} by default requires your Emacs session to load the macOS SF Symbols font. Use the convenience command @code{shazam-init} to setup both SF Symbols and to globally set your keybinding preference to the  @code{shazam} command.
+
+Add the following line to your Emacs initialization file:
+
+@lisp
+(shazam-init "M-<f19>")
+@end lisp
+
+If no binding is desired@comma{} @code{shazam-init} can be called with no arguments.
+
+By default@comma{} every identified track is logged in an Org file named @code{shazam.org} that is stored in your home directory. This log file can be changed to preference by the customizable variable @code{shazam-log-file}.
+
+@node Usage
+@chapter Usage
+
+@cindex Usage
+
+Identifying the current music playing is done with the command @code{shazam}.
+
+@example
+M-x shazam
+@end example
+
+The command @code{shazam-find-log} will open the log file (specified by the variable @code{shazam-log-file}) of recognized music tracks.
+
+@node Feedback & Discussion
+@chapter Feedback & Discussion
+
+@cindex Feedback
+Please report any feedback about @strong{shazam.el} to the @uref{https://github.com/kickingvegas/shazam/issues, issue tracker on GitHub}.
+
+@cindex Discussion
+To participate in general discussion about using @strong{shazam.el}@comma{} please join the @uref{https://github.com/kickingvegas/shazam/discussions, discussion group}.
+
+@node Sponsorship
+@chapter Sponsorship
+
+@cindex Sponsorship
+
+If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help support its development and maintenance.
+
+@image{images/default-yellow,,,,png}
+
+@uref{https://www.buymeacoffee.com/kickingvegas}
+
+@node About
+@chapter About
+
+@cindex About
+
+@uref{https://github.com/kickingvegas/shazam, shazam.el} was conceived and crafted by Charles Choi in San Francisco@comma{} California.
+
+Thank you for using @strong{shazam.el}.
+
+Always choose love.
+
+@node Acknowledgments
+@chapter Acknowledgments
+
+@cindex Acknowledgments
+
+Shazam is a trademark of Apple Inc.@comma{} registered in the U.S@. and other countries and regions.
+
+@node Main Index
+@chapter Main Index
+
+Index for this user guide.
+
+@printindex cp
+
+@node Variable Index
+@chapter Variable Index
+
+Variables@comma{} functions@comma{} commands@comma{} and menus referenced by this user guide.
+
+@printindex vr
+
+@bye
