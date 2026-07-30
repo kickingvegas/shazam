@@ -20,7 +20,7 @@ Copyright © 2026 Charles Y@. Choi
 @finalout
 @titlepage
 @title shazam.el User Guide
-@subtitle for version 0.1.0-rc.1
+@subtitle for version 0.1.0-rc.2
 @author Charles Y@. Choi (@email{kickingvegas@@gmail.com})
 @page
 @vskip 0pt plus 1filll
@@ -33,7 +33,7 @@ Copyright © 2026 Charles Y@. Choi
 @node Top
 @top shazam.el User Guide
 
-Version: 0.1.0-rc.1
+Version: 0.1.0-rc.2
 
 Copyright © 2026 @w{Charles Y. Choi}
 
@@ -41,7 +41,7 @@ Copyright © 2026 @w{Charles Y. Choi}
 
 @strong{shazam.el} is an Emacs interface to the Shazam Music Recognition feature included in macOS 14.2+ (Sonoma or more recent).
 
-If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help support its development and maintenance.
+If you enjoy using @strong{shazam.el}, please buy me a coffee to help support its development and maintenance.
 
 @image{images/default-yellow,,,,png}
 
@@ -90,7 +90,7 @@ Recognized music is added to an Org file with links to Shazam and Apple Music.
 
 @strong{shazam.el} is available to install from MELPA (TBD).
 
-For manual installation@comma{} ensure that  @code{shazam.el} is available in the Emacs  @code{load-path} variable.
+For manual installation, ensure that  @code{shazam.el} is available in the Emacs  @code{load-path} variable.
 
 This package requires the installation of a macOS Shortcut named ``Identify Music JSON''. Download and install it on your system by clicking on the link below:
 
@@ -107,9 +107,9 @@ Add the following line to your Emacs initialization file:
 (shazam-init "M-<f19>")
 @end lisp
 
-If no binding is desired@comma{} @code{shazam-init} can be called with no arguments.
+If no binding is desired, @code{shazam-init} can be called with no arguments.
 
-By default@comma{} every identified track is logged in an Org file named @code{shazam.org} that is stored in your home directory. This log file can be changed to preference by the customizable variable @code{shazam-log-file}.
+By default, every identified track is logged in an Org file named @code{shazam.org} that is stored in your home directory. This log file can be changed to preference by the customizable variable @code{shazam-log-file}.
 @vindex shazam-log-file
 
 @node Usage
@@ -133,14 +133,14 @@ The command @code{shazam-find-log} will open the log file (specified by the vari
 Please report any feedback about @strong{shazam.el} to the @uref{https://github.com/kickingvegas/shazam/issues, issue tracker on GitHub}.
 
 @cindex Discussion
-To participate in general discussion about using @strong{shazam.el}@comma{} please join the @uref{https://github.com/kickingvegas/shazam/discussions, discussion group}.
+To participate in general discussion about using @strong{shazam.el}, please join the @uref{https://github.com/kickingvegas/shazam/discussions, discussion group}.
 
 @node Sponsorship
 @chapter Sponsorship
 
 @cindex Sponsorship
 
-If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help support its development and maintenance.
+If you enjoy using @strong{shazam.el}, please buy me a coffee to help support its development and maintenance.
 
 @image{images/default-yellow,,,,png}
 
@@ -151,7 +151,7 @@ If you enjoy using @strong{shazam.el}@comma{} please buy me a coffee to help sup
 
 @cindex About
 
-@uref{https://github.com/kickingvegas/shazam, shazam.el} was conceived and crafted by Charles Choi in San Francisco@comma{} California.
+@uref{https://github.com/kickingvegas/shazam, shazam.el} was conceived and crafted by Charles Choi in San Francisco, California.
 
 Thank you for using @strong{shazam.el}.
 
@@ -162,7 +162,7 @@ Always choose love.
 
 @cindex Acknowledgments
 
-Shazam is a trademark of Apple Inc.@comma{} registered in the U.S@. and other countries and regions.
+Shazam is a trademark of Apple Inc., registered in the U.S@. and other countries and regions.
 
 @node Main Index
 @chapter Main Index
@@ -174,7 +174,7 @@ Index for this user guide.
 @node Variable Index
 @chapter Variable Index
 
-Variables@comma{} functions@comma{} commands@comma{} and menus referenced by this user guide.
+Variables, functions, commands, and menus referenced by this user guide.
 
 @printindex vr
 
