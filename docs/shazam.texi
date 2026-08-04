@@ -124,7 +124,7 @@ M-x shazam
 @end example
 
 
-The command @code{shazam-find-log} will open the log file (specified by the variable @code{shazam-log-file}) of recognized music tracks.
+The command @code{shazam-history} will open the history log file (specified by the variable @code{shazam-log-file}) of recognized music tracks.
 
 @node Feedback & Discussion
 @chapter Feedback & Discussion
