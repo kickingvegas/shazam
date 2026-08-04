@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/shazam
 ;; Keywords: tools
-;; Version: 0.1.0
+;; Version: 0.1.1-rc.1
 ;; Package-Requires: ((emacs "30.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -216,7 +216,7 @@ the async buffer and `kill-ring'."
         (save-buffer))
       (switch-to-buffer cur))))
 
-(defun shazam-find-log ()
+(defun shazam-history ()
   "Open Shazam log file."
   (interactive)
   (find-file shazam-log-file)

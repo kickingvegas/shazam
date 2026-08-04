@@ -6,7 +6,7 @@
 #+EMAIL: kickingvegas@gmail.com
 #+OPTIONS: ':t toc:t author:t email:t H:4 f:t
 #+LANGUAGE: en
-#+MACRO: version 0.1.0
+#+MACRO: version 0.1.1-rc.1
 #+MACRO: kbd (eval (org-texinfo-kbd-macro $1))
 #+TEXINFO_FILENAME: shazam.info
 #+TEXINFO_CLASS: casual
@@ -93,7 +93,7 @@ Identifying the current music playing is done with the command ~shazam~.
 #+end_src
 
 
-The command ~shazam-find-log~ will open the log file (specified by the variable ~shazam-log-file~) of recognized music tracks.
+The command ~shazam-history~ will open the history log file (specified by the variable ~shazam-log-file~) of recognized music tracks.
 
 
 * Feedback & Discussion
