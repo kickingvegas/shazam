@@ -216,7 +216,7 @@ the async buffer and `kill-ring'."
         (save-buffer))
       (switch-to-buffer cur))))
 
-(defun shazam-find-log ()
+(defun shazam-history ()
   "Open Shazam log file."
   (interactive)
   (find-file shazam-log-file)

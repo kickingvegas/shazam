@@ -93,7 +93,7 @@ Identifying the current music playing is done with the command ~shazam~.
 #+end_src
 
 
-The command ~shazam-find-log~ will open the log file (specified by the variable ~shazam-log-file~) of recognized music tracks.
+The command ~shazam-history~ will open the history log file (specified by the variable ~shazam-log-file~) of recognized music tracks.
 
 
 * Feedback & Discussion
