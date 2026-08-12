@@ -16,3 +16,4 @@ dist/
 # Undo-tree save-files
 *.~undo-tree
 /docs/shazam.info
+/docs/html/
