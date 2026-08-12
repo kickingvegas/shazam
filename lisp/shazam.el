@@ -136,6 +136,7 @@
             (error "􁈴 Undefined shazam--last-result")))
         (error "􁈴 exit error")))))
 
+;;;###autoload (autoload 'shazam "shazam" nil t)
 (defun shazam ()
   "Identify music with Shazam.
 
@@ -216,12 +217,14 @@ the async buffer and `kill-ring'."
         (save-buffer))
       (switch-to-buffer cur))))
 
+;;;###autoload (autoload 'shazam-history "shazam" nil t)
 (defun shazam-history ()
   "Open Shazam log file."
   (interactive)
   (find-file shazam-log-file)
   (goto-char (point-min)))
 
+;;;###autoload (autoload 'shazam-init "shazam" nil t)
 (defun shazam-init (&optional b)
   "Initialize Shazam, binding B to `shazam' if B is non-nil."
   (interactive)
