@@ -23,9 +23,47 @@
 ;;
 
 ;;; Code:
-(require 'seq)
+(require 'map)
 (require 'ert)
 (require 'shazam)
+
+(defvar shazamt-keys '("apple music id" "artist" "title"
+                       "video URL" "apple music URL" "shazam URL"
+                       "lyricsSnippet"
+                       "created")
+  "Shazam result keys.")
+
+(defun shazamt-base-obj (&optional appleid artist title video-url apple-url shazam-url lyrics created)
+  "Create Shazam base object.
+
+- APPLEID - Apple Music ID
+- ARTIST - Artist
+- TITLE - Title
+- VIDEO-URL - Video URL
+- APPLE-URL - Apple Music URL
+- SHAZAM-URL - Shazam URL
+- LYRICS - Lyrics snippet"
+
+  (let ((obj (make-hash-table :test #'equal)))
+    (map-put! obj "apple music id" appleid)
+    (map-put! obj "artist" artist)
+    (map-put! obj "title" title)
+    (map-put! obj "video URL" video-url)
+    (map-put! obj "apple music URL" apple-url)
+    (map-put! obj "shazam URL" shazam-url)
+    (map-put! obj "lyricsSnippet" lyrics)
+    (map-put! obj "created" created)
+    obj))
+
+(defun shazamt-shortcut-result ()
+  "Create Shazam result from Shortcut."
+
+  (let ((obj (shazamt-base-obj)))
+    (mapc (lambda (key)
+            (map-put! obj key ""))
+          shazamt-keys)
+    obj))
+
 
 
 (provide 'shazam-test-utils)

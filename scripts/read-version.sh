@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##
-# Copyright 2024-2025 Charles Y. Choi
+# Copyright 2024-2026 Charles Y. Choi
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,4 +15,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-awk '/Version: / {print $3}' $1
+awk '/Package-Version: / {print $3}' $1
