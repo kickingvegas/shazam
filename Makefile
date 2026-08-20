@@ -94,7 +94,7 @@ docs:
 
 ## Bump Patch Version
 bump-pkg:
-	sed -i 's/;; Version: $(VERSION)/;; Version: $(VERSION_BUMP)/' $(MAIN_EL)
+	sed -i 's/;; Package-Version: $(VERSION)/;; Package-Version: $(VERSION_BUMP)/' $(MAIN_EL)
 
 # bump-pkg-info: VERSION_BUMP:=$(shell python -m semver nextver $(VERSION) $(BUMP_LEVEL))
 bump-pkg-info:

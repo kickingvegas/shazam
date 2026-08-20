@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/shazam
 ;; Keywords: tools
-;; Version: 0.1.1
+;; Package-Version: 0.1.2-rc.1
 ;; Package-Requires: ((emacs "30.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -27,9 +27,10 @@
 ;; macOS 14.2+ (Sonoma or more recent).
 
 ;; INSTALL
+
 ;; This package requires the installation of a macOS Shortcut named "Identify
-;; Music JSON". Download and install it on your system by clicking on the link
-;; below:
+;; Music JSON". Download and install it in your library of Shortcuts by clicking
+;; on the link below:
 
 ;; https://www.icloud.com/shortcuts/bba3dd21146c4ba78dff1d7d0c0b1092
 
@@ -43,10 +44,13 @@
 
 ;; If no binding is desired, `shazam-init' can be called with no arguments.
 
-;;
+;; USAGE
+
+;; Run the command `shazam' either by your preferred binding or via "M-x".
 
 ;;; Code:
 (require 'map)
+(require 'url-util)
 
 (defgroup shazam nil
   "Group settings for Shazam."
@@ -61,7 +65,7 @@
   :group 'shazam)
 
 (defun shazam-message-shazam-result (shazam)
-  "Show message given SHAZAM."
+  "Show message given SHAZAM result."
   (let* ((response shazam)
          (title (substring-no-properties (map-elt response "title")))
          (artist (substring-no-properties (map-elt response "artist")))
@@ -69,7 +73,7 @@
     msg))
 
 (defun shazam-scrub-json-value (obj key)
-  "Scrub value for KEY in OBJ."
+  "Convert empty string value for KEY to nil in OBJ."
   (let ((value (map-elt obj key)))
     (if (and value (stringp value) (string-equal value ""))
         (map-put! obj key nil)
@@ -80,7 +84,6 @@
   (let* ((value (map-elt obj key))
          (decoded-value (url-unhex-string value)))
     (decode-coding-string decoded-value 'utf-8)))
-
 
 (defun shazam--process-filter (_process output)
   "Process filter PROCESS and OUTPUT."
@@ -136,6 +139,7 @@
             (error "􁈴 Undefined shazam--last-result")))
         (error "􁈴 exit error")))))
 
+;;;###autoload (autoload 'shazam "shazam" nil t)
 (defun shazam ()
   "Identify music with Shazam.
 
@@ -155,49 +159,53 @@ the async buffer and `kill-ring'."
   (if (not shazam--last-result)
       (error "No Shazam result to show")
 
-    (let* ((obj shazam--last-result)
-           (buflist ())
-           (created (map-elt obj "created"))
-           (music-id (map-elt obj "apple music id"))
-           (artist (map-elt obj "artist"))
-           (title (map-elt obj "title"))
-           (video-url (map-elt obj "video URL"))
-           (apple-url (map-elt obj "apple music URL"))
-           (shazam-url (map-elt obj "shazam URL"))
-           (lyrics (map-elt obj "lyricsSnippet"))
+    (shazam--render-result shazam--last-result)))
 
-           (buflist (push (format "* %s" title) buflist))
-           (buflist (push ":PROPERTIES:" buflist))
-           (buflist (if artist
-                        (push (format ":ARTIST: %s" artist) buflist)
-                      buflist))
-           (buflist (if created
-                        (push (format ":CREATED: %s" created) buflist)
-                      buflist))
-           (buflist (if music-id
-                        (push (format ":APPLEID: %s" music-id) buflist)
-                      buflist))
-           (buflist (push ":END:" buflist))
+(defun shazam--render-result (obj)
+  "Render Shazam OBJ result."
 
-           (buflist (if apple-url
-                        (push (format "- [[%s][Apple Music]]" apple-url) buflist)
-                      buflist))
-           (buflist (if shazam-url
-                        (push (format "- [[%s][Shazam]]" shazam-url) buflist)
-                      buflist))
-           (buflist (if video-url
-                        (push (format "- [[%s][Video]]" video-url) buflist)
-                      buflist))
+  (let* ((buflist ())
+         (created (map-elt obj "created"))
+         (music-id (map-elt obj "apple music id"))
+         (artist (map-elt obj "artist"))
+         (title (map-elt obj "title"))
+         (video-url (map-elt obj "video URL"))
+         (apple-url (map-elt obj "apple music URL"))
+         (shazam-url (map-elt obj "shazam URL"))
+         (lyrics (map-elt obj "lyricsSnippet"))
 
-           (buflist (if lyrics
-                        (progn
-                          (push "** Lyrics Snippet" buflist)
-                          (push (format "%s" lyrics) buflist))
-                      buflist))
+         (buflist (push (format "* %s" title) buflist))
+         (buflist (push ":PROPERTIES:" buflist))
+         (buflist (if artist
+                      (push (format ":ARTIST: %s" artist) buflist)
+                    buflist))
+         (buflist (if created
+                      (push (format ":CREATED: %s" created) buflist)
+                    buflist))
+         (buflist (if music-id
+                      (push (format ":APPLEID: %s" music-id) buflist)
+                    buflist))
+         (buflist (push ":END:" buflist))
 
-           (msg (string-join (reverse buflist) "\n")))
+         (buflist (if apple-url
+                      (push (format "- [[%s][Apple Music]]" apple-url) buflist)
+                    buflist))
+         (buflist (if shazam-url
+                      (push (format "- [[%s][Shazam]]" shazam-url) buflist)
+                    buflist))
+         (buflist (if video-url
+                      (push (format "- [[%s][Video]]" video-url) buflist)
+                    buflist))
 
-      msg)))
+         (buflist (if lyrics
+                      (progn
+                        (push "** Lyrics Snippet" buflist)
+                        (push (format "%s" lyrics) buflist))
+                    buflist))
+
+         (msg (string-join (reverse buflist) "\n")))
+
+    msg))
 
 (defun shazam-insert-last-org ()
   "Insert last Shazam result formatted in Org."
@@ -216,12 +224,14 @@ the async buffer and `kill-ring'."
         (save-buffer))
       (switch-to-buffer cur))))
 
+;;;###autoload (autoload 'shazam-history "shazam" nil t)
 (defun shazam-history ()
   "Open Shazam log file."
   (interactive)
   (find-file shazam-log-file)
   (goto-char (point-min)))
 
+;;;###autoload (autoload 'shazam-init "shazam" nil t)
 (defun shazam-init (&optional b)
   "Initialize Shazam, binding B to `shazam' if B is non-nil."
   (interactive)
