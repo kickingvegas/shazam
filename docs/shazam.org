@@ -66,7 +66,7 @@ Copyright © 2026 Charles Y. Choi
 
 For manual installation, ensure that  ~shazam.el~ is available in the Emacs  ~load-path~ variable.
 
-This package requires the installation of a macOS Shortcut named "Identify Music JSON". Download and install it on your system by clicking on the link below:
+This package requires the installation of a macOS Shortcut named "Identify Music JSON". Download and install it in your library of Shortcuts by clicking on the link below:
 
 - [[https://www.icloud.com/shortcuts/bba3dd21146c4ba78dff1d7d0c0b1092][iCloud Shortcut "Identify Music JSON"]]
 
@@ -86,7 +86,7 @@ By default, every identified track is logged in an Org file named ~shazam.org~ t
 * Usage
 #+CINDEX: Usage
 
-Identifying the current music playing is done with the command ~shazam~.
+Identifying the current music playing is done with the command ~shazam~. Run it using your preferred key binding or via {{{kbd(M-x)}}}.
 
 #+begin_src shell
   M-x shazam
