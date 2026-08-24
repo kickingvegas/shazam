@@ -1,3 +1,4 @@
+[[https://melpa.org/#/shazam][file:https://melpa.org/packages/shazam-badge.svg]] [[https://stable.melpa.org/#/shazam][file:https://stable.melpa.org/packages/shazam-badge.svg]] 
 * shazam.el
 :PROPERTIES:
 :CUSTOM_ID: shazam
@@ -28,7 +29,7 @@
 :CUSTOM_ID: install
 :END:
 
-*shazam.el* is available to install from MELPA (TBD).
+*shazam.el* is available to install from [[https://melpa.org/#/shazam][MELPA]].
 
 For manual installation, ensure that  ~shazam.el~ is available in the Emacs  ~load-path~ variable.
 
