@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/shazam
 ;; Keywords: tools
-;; Package-Version: 1.0.1-rc.1
+;; Package-Version: 1.0.1
 ;; Package-Requires: ((emacs "30.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
