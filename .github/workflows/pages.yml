@@ -48,7 +48,7 @@ jobs:
 
       - name: Generate Shazam User Guide
         run: |
-          echo Generating Now Playing User Guide
+          echo Generating Shazam User Guide
           make -C docs gen-html
 
       - name: Upload artifact
