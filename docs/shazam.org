@@ -6,7 +6,7 @@
 #+EMAIL: kickingvegas@gmail.com
 #+OPTIONS: ':t toc:t author:t email:t H:4 f:t
 #+LANGUAGE: en
-#+MACRO: version 1.0.1
+#+MACRO: version 1.0.2-rc.1
 #+MACRO: kbd (eval (org-texinfo-kbd-macro $1))
 #+TEXINFO_FILENAME: shazam.info
 #+TEXINFO_CLASS: casual
@@ -14,8 +14,8 @@
 #+TEXINFO_HEADER: @paragraphindent none
 #+TEXINFO_TITLEPAGE: t
 #+TEXINFO_DIR_CATEGORY: Emacs misc features
-#+TEXINFO_DIR_NAME: shazam
-#+TEXINFO_DIR_DESC: shazam.el is an Emacs interface to the Shazam music recognition feature for macOS.
+#+TEXINFO_DIR_NAME: Shazam
+#+TEXINFO_DIR_DESC: An interface to the Shazam music recognition feature for macOS.
 #+TEXINFO_PRINTED_TITLE: shazam.el User Guide
 
 Version: {{{version}}}

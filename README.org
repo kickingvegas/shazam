@@ -68,6 +68,8 @@ If you enjoy using *shazam.el*, please buy me a coffee to help support its devel
 \\
 [[https://www.buymeacoffee.com/kickingvegas][file:docs/images/default-yellow.png]]
 
+Please star and share this project to others as well. Thank you!
+
 * Acknowledgments
 :PROPERTIES:
 :CUSTOM_ID: acknowledgments
